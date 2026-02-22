@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data Deletion – Card Game 151</title>
+  <title>Suppression de données – Jeu de Cartes 151</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,6 +17,22 @@
       padding: 1rem;
       text-align: center;
       border-radius: 8px;
+      position: relative;
+    }
+    #lang-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: white;
+      color: #004080;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #lang-toggle:hover {
+      background-color: #e6e6e6;
     }
     main {
       background-color: white;
@@ -47,44 +63,124 @@
 <body>
 
   <header>
-    <h1>Account and Data Deletion – Card Game 151</h1>
+    <h1 data-i18n="header_title">Suppression de compte et de données – Jeu de Cartes 151</h1>
+    <button id="lang-toggle">English</button>
   </header>
 
   <main>
-    <p><strong>Card Game 151</strong> is an online card game application that allows users to play, progress, and interact. Authentication can be done via Facebook, Google, or email and password.</p>
+    <p data-i18n="intro"><strong>Jeu de Cartes 151</strong> est une application de jeu de cartes en ligne permettant aux utilisateurs de jouer, de progresser et d’interagir. L’authentification peut se faire via Facebook, Google ou par adresse e-mail et mot de passe.</p>
 
-    <h2>Collected Data</h2>
-    <p>We collect and store the information necessary for the game to function:</p>
+    <h2 data-i18n="collected_title">Données collectées</h2>
+    <p data-i18n="collected_intro">Nous collectons et stockons les informations nécessaires au fonctionnement du jeu :</p>
     <ul>
-      <li>Profile information (name, email address, profile picture if provided by the authentication provider).</li>
-      <li>In-game progress, scores, statistics, and game history.</li>
-      <li>Game preferences and account settings.</li>
+      <li data-i18n="collected_item1">Informations de profil (nom, adresse e-mail, photo de profil si fournie via le fournisseur d’authentification).</li>
+      <li data-i18n="collected_item2">Progression dans le jeu, scores, statistiques et historique des parties.</li>
+      <li data-i18n="collected_item3">Préférences de jeu et paramètres de compte.</li>
     </ul>
-    <p>This data is used solely to provide you with a personalized gaming experience and to improve our services.</p>
+    <p data-i18n="collected_usage">Ces données sont utilisées uniquement pour vous offrir une expérience de jeu personnalisée et pour améliorer nos services.</p>
 
-    <h2>Deleting Your Account and Data</h2>
-    <p>You have the right to request the deletion of your account and all associated personal data. To do so, please contact us directly using one of the methods below. We will process your request as soon as possible (typically within 7 business days).</p>
-
-    <p>Please include the following in your message:</p>
+    <h2 data-i18n="deletion_title">Suppression de votre compte et de vos données</h2>
+    <p data-i18n="deletion_intro">Vous avez le droit de demander la suppression de votre compte et de toutes les données personnelles associées. Pour cela, veuillez nous contacter directement via l’un des moyens ci-dessous. Nous traiterons votre demande dans les meilleurs délais (généralement sous 7 jours ouvrés).</p>
+    <p data-i18n="deletion_details">Merci de préciser dans votre message :</p>
     <ul>
-      <li>Your username or the email address used for the account.</li>
-      <li>The authentication method used (Facebook, Google, or email/password).</li>
+      <li data-i18n="deletion_item1">Votre nom d’utilisateur ou l’adresse e-mail utilisée pour le compte.</li>
+      <li data-i18n="deletion_item2">La méthode d’authentification employée (Facebook, Google, ou email/mot de passe).</li>
     </ul>
 
-    <h2>Contact for Deletion Requests</h2>
-    <p>For any account or data deletion requests, write to us at:</p>
+    <h2 data-i18n="contact_title">Contact pour demande de suppression</h2>
+    <p data-i18n="contact_intro">Pour toute demande de suppression de compte ou de données, écrivez‑nous à :</p>
     <ul>
-      <li>Email: <a href="mailto:traorehaouaou2001@gmail.com"><strong>traorehaouaou2001@gmail.com</strong></a></li>
-      <li>Phone / WhatsApp: <strong>+223 76 79 13 80</strong></li>
+      <li><span data-i18n="contact_email_label">Email :</span> <a href="mailto:traorehaouaou2001@gmail.com">traorehaouaou2001@gmail.com</a></li>
+      <li><span data-i18n="contact_phone_label">Téléphone / WhatsApp :</span> <strong>+223 76 79 13 80</strong></li>
     </ul>
-    <p>You can also use these contact details for any questions regarding your personal data.</p>
+    <p data-i18n="contact_extra">Vous pouvez également utiliser ces coordonnées pour toute question relative à vos données personnelles.</p>
 
-    <p>Thank you for your trust, and see you soon on Card Game 151!</p>
+    <p data-i18n="thanks">Merci de votre confiance et à très bientôt sur Jeu de Cartes 151 !</p>
   </main>
 
   <footer>
-    &copy; 2025 Card Game 151 – All rights reserved.
+    &copy; 2025 <span data-i18n="footer_rights">Jeu de Cartes 151 – Tous droits réservés.</span>
   </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        header_title: "Suppression de compte et de données – Jeu de Cartes 151",
+        intro: "<strong>Jeu de Cartes 151</strong> est une application de jeu de cartes en ligne permettant aux utilisateurs de jouer, de progresser et d’interagir. L’authentification peut se faire via Facebook, Google ou par adresse e-mail et mot de passe.",
+        collected_title: "Données collectées",
+        collected_intro: "Nous collectons et stockons les informations nécessaires au fonctionnement du jeu :",
+        collected_item1: "Informations de profil (nom, adresse e-mail, photo de profil si fournie via le fournisseur d’authentification).",
+        collected_item2: "Progression dans le jeu, scores, statistiques et historique des parties.",
+        collected_item3: "Préférences de jeu et paramètres de compte.",
+        collected_usage: "Ces données sont utilisées uniquement pour vous offrir une expérience de jeu personnalisée et pour améliorer nos services.",
+        deletion_title: "Suppression de votre compte et de vos données",
+        deletion_intro: "Vous avez le droit de demander la suppression de votre compte et de toutes les données personnelles associées. Pour cela, veuillez nous contacter directement via l’un des moyens ci-dessous. Nous traiterons votre demande dans les meilleurs délais (généralement sous 7 jours ouvrés).",
+        deletion_details: "Merci de préciser dans votre message :",
+        deletion_item1: "Votre nom d’utilisateur ou l’adresse e-mail utilisée pour le compte.",
+        deletion_item2: "La méthode d’authentification employée (Facebook, Google, ou email/mot de passe).",
+        contact_title: "Contact pour demande de suppression",
+        contact_intro: "Pour toute demande de suppression de compte ou de données, écrivez‑nous à :",
+        contact_email_label: "Email :",
+        contact_phone_label: "Téléphone / WhatsApp :",
+        contact_extra: "Vous pouvez également utiliser ces coordonnées pour toute question relative à vos données personnelles.",
+        thanks: "Merci de votre confiance et à très bientôt sur Jeu de Cartes 151 !",
+        footer_rights: "Jeu de Cartes 151 – Tous droits réservés."
+      },
+      en: {
+        header_title: "Account and Data Deletion – Card Game 151",
+        intro: "<strong>Card Game 151</strong> is an online card game application that allows users to play, progress, and interact. Authentication can be done via Facebook, Google, or email and password.",
+        collected_title: "Collected Data",
+        collected_intro: "We collect and store the information necessary for the game to function:",
+        collected_item1: "Profile information (name, email address, profile picture if provided by the authentication provider).",
+        collected_item2: "In-game progress, scores, statistics, and game history.",
+        collected_item3: "Game preferences and account settings.",
+        collected_usage: "This data is used solely to provide you with a personalized gaming experience and to improve our services.",
+        deletion_title: "Deleting Your Account and Data",
+        deletion_intro: "You have the right to request the deletion of your account and all associated personal data. To do so, please contact us directly using one of the methods below. We will process your request as soon as possible (typically within 7 business days).",
+        deletion_details: "Please include the following in your message:",
+        deletion_item1: "Your username or the email address used for the account.",
+        deletion_item2: "The authentication method used (Facebook, Google, or email/password).",
+        contact_title: "Contact for Deletion Requests",
+        contact_intro: "For any account or data deletion requests, write to us at:",
+        contact_email_label: "Email:",
+        contact_phone_label: "Phone / WhatsApp:",
+        contact_extra: "You can also use these contact details for any questions regarding your personal data.",
+        thanks: "Thank you for your trust, and see you soon on Card Game 151!",
+        footer_rights: "Card Game 151 – All rights reserved."
+      }
+    };
+
+    let currentLang = 'fr';
+
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          // Special handling for elements that might contain HTML (like the intro paragraph with <strong>)
+          if (key === 'intro') {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+      // Update button text
+      const toggleBtn = document.getElementById('lang-toggle');
+      toggleBtn.textContent = lang === 'fr' ? 'English' : 'Français';
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+      currentLang = lang;
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      setLanguage(newLang);
+    });
+
+    // Initial set to French (though default HTML is French, we set it to be safe)
+    setLanguage('fr');
+  </script>
 
 </body>
 </html>
